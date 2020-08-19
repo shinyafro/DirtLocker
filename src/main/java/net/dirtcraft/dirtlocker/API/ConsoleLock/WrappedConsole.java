@@ -2,6 +2,7 @@ package net.dirtcraft.dirtlocker.API.ConsoleLock;
 
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.command.CommandSource;
+import org.spongepowered.api.command.source.ConsoleSource;
 import org.spongepowered.api.service.context.Context;
 import org.spongepowered.api.service.permission.SubjectCollection;
 import org.spongepowered.api.service.permission.SubjectData;
@@ -14,9 +15,13 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-public abstract class WrappedConsole implements CommandSource, SecuredSource {
+public class WrappedConsole implements ConsoleSource, SecuredSource {
 
     private CommandSource actualSource;
+
+    public static ConsoleSource getConsole(){
+        return new WrappedConsole(){};
+    }
 
     WrappedConsole(){
         actualSource = Sponge.getServer().getConsole();
