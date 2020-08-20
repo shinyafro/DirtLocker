@@ -67,7 +67,7 @@ public class ConsoleLock implements Module {
     @ConfigSerializable
     private static class Config{
         @Setting(comment = "Commands to be blacklisted. Only secure sources such as players can send these commands. Each line is a new command, which commas at the end with exception for the last command.")
-        public List<String> commands = Arrays.asList("lp", "luckperms", "luckperm", "perm", "kill", "op", "deop", "cs", "csign", "csigns", "commandsign", "commandsigns");
+        public List<String> commands = Arrays.asList("lp", "luckperms", "luckperm", "perm", "op", "deop", "cs", "csign", "csigns", "commandsign", "commandsigns");
     }
 
 }
